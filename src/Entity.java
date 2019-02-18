@@ -1,3 +1,5 @@
+import java.security.SecureRandom;
+
 public class Entity {
     private int entity_id;
     private boolean entity_is_variable;
@@ -5,6 +7,7 @@ public class Entity {
     private int intValue;
     private int numa;
     private int numb;
+    SecureRandom random = new SecureRandom();
 
     public Entity(int entity_id, boolean entity_is_variable, int intValue, int numa, int numb){
         this.entity_id = entity_id;
@@ -23,6 +26,10 @@ public class Entity {
 
     public int entity_addition(int numa, int numb){
         return numa + numb;
+    }
+
+    public void mutateTheEntity(){
+        this.intValue = random.nextInt(10);
     }
 
     public int getEntity_id() {
